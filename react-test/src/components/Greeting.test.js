@@ -39,7 +39,7 @@ describe('Greeting Component', () => {
         const buttonElement = screen.getByRole('button')
         userEvent.click(buttonElement)
         //Assert
-        const outputElement = screen.getByText('changed', {exact: false})
-        expect(outputElement).toBeInTheDocument()
+        const outputElement = screen.queryByText('Nice to meet you', {exact: false})
+        expect(outputElement).toBeNull()
     })
 } )
